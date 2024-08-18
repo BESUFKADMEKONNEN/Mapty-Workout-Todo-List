@@ -46,7 +46,7 @@ npm run build
 
 **This command will generate a production-ready build and place the output in the ./dist directory.
 
-Usage
+6.Usage
 Open index.html in a web browser to start using the application.
 Use the application to record and manage your running and cycling workouts.
 
