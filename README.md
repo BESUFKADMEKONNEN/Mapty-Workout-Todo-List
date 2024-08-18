@@ -50,8 +50,8 @@ npm run build
 Open index.html in a web browser to start using the application.
 Use the application to record and manage your running and cycling workouts.
 
-###License
+### License
 This project is licensed under the ISC License.
 
-###Author
-####Besufkad Mekonnen
+### Author
+#### Besufkad Mekonnen
