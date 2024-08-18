@@ -19,26 +19,30 @@ To get started with Mapty, follow these steps:
 
 
 2.Navigate to the project directory:
-
+```bash
 cd mapty
+```
 
 3.Install dependencies:
 
 Make sure you have Node.js installed. Then, run:
-
+```bash
 npm install
+```
 
 4.Development
 To start a local development server with live reloading, use:
-
+```bash
 npm start
+```
 
 **This command will start Parcel and open your project in the default web browser, enabling you to develop and see changes in real-time.
 
 5.Building for Production
 To create a production build of the project, use:
-
+```bash
 npm run build
+```
 
 **This command will generate a production-ready build and place the output in the ./dist directory.
 
