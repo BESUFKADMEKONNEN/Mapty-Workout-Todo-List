@@ -16,8 +16,6 @@ To get started with Mapty, follow these steps:
 
    ```bash
    https://github.com/BESUFKADMEKONNEN/Mapty-Workout-Todo-List.git
-   or
-   git pull https://github.com/BESUFKADMEKONNEN/Mapty-Workout-Todo-List.git
 
 
 2.Navigate to the project directory:
