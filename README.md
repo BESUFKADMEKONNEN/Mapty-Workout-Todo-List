@@ -2,6 +2,9 @@
 
 Mapty is a geolocation-based HTML, CSS, and JavaScript application that functions as a todo list specifically designed for recording and tracking workout activities such as running and cycling.
 
+## Live View
+### https://mapty-by-besu.netlify.app/
+
 ## Features
 
 - **Geolocation Tracking**: Uses geolocation APIs to track and map workout routes.
