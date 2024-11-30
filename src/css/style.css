@@ -53,6 +53,12 @@ a:visited {
   height: 5.2rem;
   align-self: center;
   margin-bottom: 4rem;
+  animation: fade-in 1.5s ease-in-out;
+}
+
+.animated-logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }
 
 .workouts {
@@ -217,4 +223,40 @@ a:visited {
 }
 .cycling-popup .leaflet-popup-content-wrapper {
   border-left: 5px solid var(--color-brand--1);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .sidebar {
+    flex-basis: 40%;
+    padding: 2rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    flex-basis: 60%;
+    padding: 1rem 2rem;
+  }
+
+  .logo {
+    height: 4rem;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
