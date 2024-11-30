@@ -106,10 +106,14 @@ class APP {
     this.#map = L.map('map').setView(coord, 13);
 
     //   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(this.#map);
+    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //   attribution:
+    //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    // }).addTo(this.#map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+}).addTo(this.map);
 
     //   L.marker(coord)
     //     .addTo(map)
