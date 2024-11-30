@@ -116,10 +116,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(this.#map);
 
-      L.marker(coord)
-        .addTo(map)
-        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-        .openPopup();
+      // L.marker(coord)
+      //   .addTo(map)
+      //   .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+      //   .openPopup();
 
     this.#map.on('click', this._showForm.bind(this));
     
