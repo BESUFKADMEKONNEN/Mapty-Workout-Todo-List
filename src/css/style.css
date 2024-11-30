@@ -29,25 +29,38 @@ body {
   min-height: 100vh;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1rem;
+}
+
 #map {
-  flex: 1;
-  height: 60vh;
-  margin: 1rem auto;
-  width: 100%;
-  max-width: 1200px;
+  flex: 2;
+  height: 70vh;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  flex: 1;
+  max-width: 400px;
+  background-color: var(--color-light);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 70vh;
 }
 
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  max-width: 800px;
-  margin: 1rem auto;
-  padding: 1.5rem;
   background-color: var(--color-light);
   border-radius: 8px;
+  padding: 1.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 }
@@ -83,8 +96,6 @@ body {
 .workouts {
   list-style: none;
   padding: 0;
-  max-width: 800px;
-  margin: 1rem auto;
 }
 
 .workout {
@@ -126,13 +137,23 @@ body {
   margin-top: auto;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  .form {
-    grid-template-columns: 1fr;
+  .wrapper {
+    flex-direction: column;
   }
 
   #map {
     height: 50vh;
+  }
+
+  .sidebar {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
   }
 
   .workout__details {
