@@ -1,262 +1,142 @@
 :root {
-  --color-brand--1: #ffb545;
-  --color-brand--2: #00c46a;
+  --color-primary: #ff9800;
+  --color-secondary: #03a9f4;
+  --color-bg: #f4f4f9;
+  --color-dark: #333;
+  --color-light: #fff;
+  --color-muted: #767676;
 
-  --color-dark--1: #2d3439;
-  --color-dark--2: #42484d;
-  --color-light--1: #aaa;
-  --color-light--2: #ececec;
-  --color-light--3: rgb(214, 222, 224);
+  --font-family: 'Poppins', sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
-  color: var(--color-light--2);
-  font-weight: 400;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
   line-height: 1.6;
-  height: 100vh;
-  overscroll-behavior-y: none;
-
-  background-color: #fff;
-  padding: 2.5rem;
-
-  display: flex;
-}
-
-/* GENERAL */
-a:link,
-a:visited {
-  color: var(--color-brand--1);
-}
-
-/* SIDEBAR */
-.sidebar {
-  flex-basis: 50rem;
-  background-color: var(--color-dark--1);
-  padding: 3rem 5rem 4rem 5rem;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 5.2rem;
-  align-self: center;
-  margin-bottom: 4rem;
-  animation: fade-in 1.5s ease-in-out;
-}
-
-.animated-logo:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
-}
-
-.workouts {
-  list-style: none;
-  height: 77vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.workouts::-webkit-scrollbar {
-  width: 0;
-}
-
-.workout {
-  background-color: var(--color-dark--2);
-  border-radius: 5px;
-  padding: 1.5rem 2.25rem;
-  margin-bottom: 1.75rem;
-  cursor: pointer;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0.75rem 1.5rem;
-}
-.workout--running {
-  border-left: 5px solid var(--color-brand--2);
-}
-.workout--cycling {
-  border-left: 5px solid var(--color-brand--1);
-}
-
-.workout__title {
-  font-size: 1.7rem;
-  font-weight: 600;
-  grid-column: 1 / -1;
-}
-
-.workout__details {
-  display: flex;
-  align-items: baseline;
-}
-
-.workout__icon {
-  font-size: 1.8rem;
-  margin-right: 0.2rem;
-  height: 0.28rem;
-}
-
-.workout__value {
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
-}
-
-.workout__unit {
-  font-size: 1.1rem;
-  color: var(--color-light--1);
-  text-transform: uppercase;
-  font-weight: 800;
+#map {
+  flex: 1;
+  height: 60vh;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form {
-  background-color: var(--color-dark--2);
-  border-radius: 5px;
-  padding: 1.5rem 2.75rem;
-  margin-bottom: 1.75rem;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 2.5rem;
-
-  /* Match height and activity boxes */
-  height: 9.25rem;
-  transition: all 0.5s, transform 1ms;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  background-color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .form.hidden {
-  transform: translateY(-30rem);
-  height: 0;
-  padding: 0 2.25rem;
-  margin-bottom: 0;
+  transform: translateY(-100%);
   opacity: 0;
 }
 
 .form__row {
   display: flex;
-  align-items: center;
-}
-
-.form__row--hidden {
-  display: none;
+  flex-direction: column;
 }
 
 .form__label {
-  flex: 0 0 50%;
-  font-size: 1.5rem;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .form__input {
-  width: 100%;
-  padding: 0.3rem 1.1rem;
-  font-family: inherit;
+  padding: 0.8rem;
   font-size: 1.4rem;
-  border: none;
-  border-radius: 3px;
-  background-color: var(--color-light--3);
-  transition: all 0.2s;
+  border: 1px solid var(--color-muted);
+  border-radius: 4px;
+  transition: border 0.2s;
 }
 
 .form__input:focus {
+  border-color: var(--color-primary);
   outline: none;
-  background-color: #fff;
 }
 
-.form__btn {
-  display: none;
+.workouts {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.workout {
+  background-color: var(--color-light);
+  border-left: 6px solid var(--color-primary);
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workout--cycling {
+  border-left-color: var(--color-secondary);
+}
+
+.workout__title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.workout__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.workout__icon {
+  margin-right: 0.5rem;
+  font-size: 1.8rem;
 }
 
 .copyright {
-  margin-top: auto;
-  font-size: 1.3rem;
   text-align: center;
-  color: var(--color-light--1);
+  font-size: 1.4rem;
+  color: var(--color-muted);
+  margin-top: auto;
 }
 
-.twitter-link:link,
-.twitter-link:visited {
-  color: var(--color-light--1);
-  transition: all 0.2s;
-}
-
-.twitter-link:hover,
-.twitter-link:active {
-  color: var(--color-light--2);
-}
-
-/* MAP */
-#map {
-  flex: 1;
-  height: 100%;
-  background-color: var(--color-light--1);
-}
-
-/* Popup width is defined in JS using options */
-.leaflet-popup .leaflet-popup-content-wrapper {
-  background-color: var(--color-dark--1);
-  color: var(--color-light--2);
-  border-radius: 5px;
-  padding-right: 0.6rem;
-}
-
-.leaflet-popup .leaflet-popup-content {
-  font-size: 1.5rem;
-}
-
-.leaflet-popup .leaflet-popup-tip {
-  background-color: var(--color-dark--1);
-}
-
-.running-popup .leaflet-popup-content-wrapper {
-  border-left: 5px solid var(--color-brand--2);
-}
-.cycling-popup .leaflet-popup-content-wrapper {
-  border-left: 5px solid var(--color-brand--1);
-}
-
-/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-  .sidebar {
-    flex-basis: 40%;
-    padding: 2rem 3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    flex-basis: 60%;
-    padding: 1rem 2rem;
-  }
-
-  .logo {
-    height: 4rem;
-  }
-
   .form {
     grid-template-columns: 1fr;
-    height: auto;
   }
-}
 
-/* ANIMATIONS */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
+  #map {
+    height: 50vh;
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+
+  .workout__details {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
