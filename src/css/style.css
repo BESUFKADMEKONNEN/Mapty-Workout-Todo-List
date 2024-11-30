@@ -38,20 +38,21 @@ body {
 
 #map {
   flex: 2;
-  height: 70vh;
+  height: 60vh;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-bg);  /* Ensure map background matches */
 }
 
 .sidebar {
   flex: 1;
-  max-width: 400px;
-  background-color: var(--color-light);
+  max-width: 350px;
+  background-color: var(--color-bg); /* Original color for sidebar */
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 60vh;  /* Adjust height to match map */
   overflow-y: auto;
-  height: 70vh;
 }
 
 .form {
@@ -150,6 +151,7 @@ body {
   .sidebar {
     height: auto;
     max-width: 100%;
+    margin-top: 1rem;
   }
 
   .form {
@@ -161,3 +163,4 @@ body {
     align-items: flex-start;
   }
 }
+
